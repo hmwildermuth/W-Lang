@@ -1,12 +1,13 @@
 #import <iostream>
 #import <vector>
 #include <fstream>
+#include <math.h>       /* sqrt */
 
 /*
-	A language made by henry wildermuth, both interpreted and written in files.
+	A language made by henry wildermuth, both interpreter and written in files.
 */
 
-int pow(int base, int exponent) {
+int pow(int a, int b) {
 	if (b < 1)
 		return 0;
 	if (b ==1 )
@@ -68,6 +69,10 @@ void exp(std::vector<int> & stack) {
 
 void print(std::vector<int> & stack) {
 	std::cout << stack.back() << std::endl;
+}
+
+void sqrt(std::vector<int> & stack) {
+	stack.back() = sqrt(stack.back());
 }
 
 void printStack(std::vector<int> & stack) {
@@ -163,6 +168,12 @@ int main(int argc, char *argv[]) {
 		else if (!strcmp(joe,  "drop")) {
 			if (stack.size() > 0)
 				drop(stack);
+			else
+				notEnoughItems();
+		}
+		else if (!strcmp(joe,  "sqrt")) {
+			if (stack.size() > 0)
+				sqrt(stack);
 			else
 				notEnoughItems();
 		}
