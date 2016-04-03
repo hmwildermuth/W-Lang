@@ -1,5 +1,6 @@
 # W-Lang
-A simple interpreted and written language, targeted for beginners who want to learn about the stack.
+A simple interpreted and written language, targeted for beginners who want to learn about the stack.  
+Made in early in the morning at HackBCA 2016 by Henry Wildermuth, although it was not his team's project.
 
 ## Installation
 Download the language.cpp file from the repo.  
