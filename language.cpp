@@ -1,5 +1,5 @@
-#import <iostream>
-#import <vector>
+#include <iostream>
+#include <vector>
 #include <fstream>
 #include <math.h>       /* sqrt */
 
