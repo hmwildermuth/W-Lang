@@ -7,6 +7,9 @@
 	A language made by henry wildermuth, both interpreter and written in files.
 */
 
+static const double pi = 3.1415926536;
+static const double e = 2.7182818285;
+
 int pow(int a, int b) {
 	if (b < 1)
 		return 0;
@@ -19,63 +22,63 @@ void notEnoughItems() {
 	std::cout << "The stack does not have enough items." << std::endl;
 }
 
-void swap(std::vector<int> & stack) {
+void swap(std::vector<double> & stack) {
 	int temp= stack[stack.size()-1];
 	stack[stack.size()-1] = stack[stack.size()-2];
 	stack[stack.size()-2] = temp;
 }
 
-void dup(std::vector<int> & stack) {
+void dup(std::vector<double> & stack) {
 	stack.push_back(stack.back());
 }
 
-void drop(std::vector<int> & stack) {
+void drop(std::vector<double> & stack) {
 	stack.erase(stack.begin() + stack.size() -1);
 }
 
-void reset(std::vector<int> & stack) {
+void reset(std::vector<double> & stack) {
 	stack.clear();
 }
 
-void rot(std::vector<int> & stack) {
+void rot(std::vector<double> & stack) {
 	stack.push_back(stack[stack.size()-3]);
 	stack.erase(stack.begin() + stack.size() -4);
 }
 
-void add(std::vector<int> & stack) {
+void add(std::vector<double> & stack) {
 	stack[stack.size()-1] = stack[stack.size()-2] + stack[stack.size()-1];
 	stack.erase(stack.begin() + stack.size()-2);
 }
 
-void sub(std::vector<int> & stack) {
+void sub(std::vector<double> & stack) {
 	stack[stack.size()-1] = stack[stack.size()-2] - stack[stack.size()-1];
 	stack.erase(stack.begin() + stack.size()-2);
 }
 
-void mult(std::vector<int> & stack) {
+void mult(std::vector<double> & stack) {
 	stack[stack.size()-1] = stack[stack.size()-2] * stack[stack.size()-1];
 	stack.erase(stack.begin() + stack.size()-2);
 }
 
-void div(std::vector<int> & stack) {
+void div(std::vector<double> & stack) {
 	stack[stack.size()-1] = stack[stack.size()-2] / stack[stack.size()-1];
 	stack.erase(stack.begin() + stack.size()-2);
 }
 
-void exp(std::vector<int> & stack) {
+void exp(std::vector<double> & stack) {
 	stack[stack.size()-1] = pow(stack[stack.size()-2] , stack[stack.size()-1] );
 	stack.erase(stack.begin() + stack.size()-2);
 }
 
-void print(std::vector<int> & stack) {
+void print(std::vector<double> & stack) {
 	std::cout << stack.back() << std::endl;
 }
 
-void sqrt(std::vector<int> & stack) {
+void sqrt(std::vector<double> & stack) {
 	stack.back() = sqrt(stack.back());
 }
 
-void printStack(std::vector<int> & stack) {
+void printStack(std::vector<double> & stack) {
 	std::cout << "{";
 	for (int i = 0; i < stack.size(); i++) {
 		if (i != 0 ) std::cout << ", ";
@@ -92,7 +95,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	std::vector<int> stack;
+	std::vector<double> stack;
 	std::ifstream file;
 
 	char * joe = (char * ) malloc(1024);
@@ -188,8 +191,12 @@ int main(int argc, char *argv[]) {
 		}
 		else if (!strcmp(joe, "end"))
 			break;
+		else if (!strcmp(joe, "pi"))
+			stack.push_back(pi);
+		else if (!strcmp(joe, "e"))
+			stack.push_back(e);
 		else
-			stack.push_back(atoi(joe));
+			stack.push_back(atof(joe));
 	}
 	if (!using_cin) {
 		file.close();
