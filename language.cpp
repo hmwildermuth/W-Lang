@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
 			else
 				notEnoughItems();
 		}
-		else if (!strcmp(joe,  "exp") || !strcmp(joe,  "^")) {
+		else if (!strcmp(joe,  "exp") || !strcmp(joe,  "^") || !strcmp(joe,  "pow")){
 			if (stack.size() > 1)
 				exp(stack);
 			else

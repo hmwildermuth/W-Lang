@@ -22,7 +22,7 @@ Comments are also available with `/* ... */`. The `/*` and `*/` **_must_** be pr
 | `sub` or `-`  | subtraction |
 | `mult` or `*` | multiplication |
 | `div` or `/`  | division |
-| `exp` or `^`  | exponentiate |
+| `exp`, `pow` or `^`  | exponentiate |
 | `sqrt`     | square root |
 | `reset`     | empty stack |
 | `dup`     | duplicate: copy top of stack |
