@@ -2,10 +2,12 @@
 #include <vector>
 #include <fstream>
 #include <math.h>       /* sqrt */
-
+#include <stdlib.h>
+#include <string.h>
 /*
 	A language made by henry wildermuth, both interpreter and written in files.
 */
+
 
 static const double pi = 3.1415926536;
 static const double e = 2.7182818285;
