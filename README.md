@@ -31,7 +31,7 @@ Comments are also available with `/* ... */`. The `/*` and `*/` **_must_** be pr
 | `print`     | print the top of the stack |
 | `printStack`     | print entire stack |
 | `drop`     | remove top of stack |
-| `end`     | ends a program |
+| `end`, `exit`, `quit` or `q`    | ends a program |
 | `/* ... */`     | comment |
 | `e` | adds the mathematical constant e to the stack |
 | `pi` | adds the mathematical constant pi to the stack |
