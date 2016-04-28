@@ -165,7 +165,10 @@ int main(int argc, char *argv[]) {
 				notEnoughItems();
 		}
 		else if (!strcmp(joe,  "print"))
-			print(stack);
+			if (stack.size() > 0)
+				print(stack);
+			else
+				notEnoughItems();
 		else if (!strcmp(joe,  "printStack"))
 			printStack(stack);
 		else if (!strcmp(joe,  "reset"))
@@ -191,7 +194,7 @@ int main(int argc, char *argv[]) {
 				}
 			} while (strcmp(joe, "*/"));
 		}
-		else if (!strcmp(joe, "end"))
+		else if (!strcmp(joe, "end") || !strcmp(joe, "quit") || !strcmp(joe, "exit") || !strcmp(joe, "q"))
 			break;
 		else if (!strcmp(joe, "pi"))
 			stack.push_back(pi);
