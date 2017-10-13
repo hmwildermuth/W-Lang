@@ -194,6 +194,15 @@ int main(int argc, char *argv[]) {
 				}
 			} while (strcmp(joe, "*/"));
 		}
+		else if (!strcmp(joe, "//")) {
+			do {
+				if (using_cin) {
+					std::cin >> joe;
+				} else {
+					file >> joe;
+				}
+			} while (strcmp(joe, "*/"));
+		}
 		else if (!strcmp(joe, "end") || !strcmp(joe, "quit") || !strcmp(joe, "exit") || !strcmp(joe, "q"))
 			break;
 		else if (!strcmp(joe, "pi"))
