@@ -37,12 +37,23 @@ Comments are also available with `/* ... */`. The `/*` and `*/` **_must_** be pr
 | `pi` | adds the mathematical constant pi to the stack |
 
 ## Examples
-In order to do pythag, you would this code:
+In order to do pythag:
 ```
 3 4 /* enter the numbers you want to the stack, in this case I use 3 and 4. */
 dup mult /* square first number */
 swap dup mult /* square second number */
 add sqrt /* add and take square root */
+print
+end
+```
+
+In order to calculate the dot product of two vectors (where Vx is 3, Vy is 4, Wx is 5 and Wy is 6)
+```
+3 4 5 6
+mult
+rot
+mult
+add
 print
 end
 ```
